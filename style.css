@@ -1,0 +1,83 @@
+body {
+  /* background-image: url("images/concrete-texture.png"); */
+  /* background-image: url("images/agsquare.png"); */
+  /* background-image: url("images/p5.png"); */
+  background: linear-gradient(360deg, rgba(92, 111, 255, 1) 0%, rgba(0, 128, 128, 1) 100%);
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* --------- tool section -----------*/
+
+.ocean {
+  height: 1000px;
+}
+
+#squid {
+  height: 75px;
+  position: absolute;
+}
+
+#submarine {
+  height: 100px;
+}
+
+#submarine {
+  top: 0px;
+  left: 0px;
+  position: relative;
+}
+
+/* .submarine {
+  position: absolute;
+  display: block;
+} */
+
+.bubbles {
+  background: #ffffff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  animation: bubbleUp 20s linear infinite;
+}
+
+.sub-bubbles {
+  background: #ffffff;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+  margin: 1px;
+}
+
+.torpedo {
+  animation: torpedoo 5s ease-out forwards;
+}
+
+.torpedo img {
+  /* height: 0px; */
+  width: 50px;
+}
+
+@keyframes torpedoo {
+  0% {
+    transform: translateX(0);
+  }
+  /* 25% {
+    transform: translateY(10px);
+  } */
+  100% {
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(0);
+  }
+  50% {}
+  100% {
+    transform: translateY(-1080px);
+  }
+}

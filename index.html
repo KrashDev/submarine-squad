@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|EB+Garamond|Tienne|Raleway|Sorts+Mill+Goudy" rel="stylesheet">
+  <title>submarine squad</title>
+</head>
+
+<body>
+  <div class="ocean container-fluid">
+
+    <div>
+      <img id="submarine" src="images/sub.svg">
+    </div>
+
+  </div>
+  <!-- container div -->
+  <script>
+    //submarine movement
+    const downKeys = new Set();
+    let xx = 0;
+    let yy = 0;
+    const sub = document.getElementById('submarine');
+
+    document.addEventListener('keydown', event => downKeys.add(event.key));
+    document.addEventListener('keyup', event => downKeys.delete(event.key));
+
+    function update() {
+      function isDown(key) {
+        return downKeys.has(key)
+      }
+      if (isDown('ArrowDown')) sub.style.top = ++yy + 'px';
+      if (isDown('ArrowUp')) sub.style.top = --yy + 'px';
+      if (isDown('ArrowRight')) sub.style.left = ++xx + 'px';
+      if (isDown('ArrowLeft')) sub.style.left = --xx + 'px';
+      window.requestAnimationFrame(update);
+    }
+
+    window.requestAnimationFrame(update);
+  </script>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.js "></script>
+<script src="app.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js "></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js "></script>
+
+</html>
